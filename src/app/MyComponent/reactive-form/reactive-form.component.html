@@ -1,0 +1,53 @@
+<section class="wrapper pt-5">
+    <div class="container">
+        <div class="col-sm-8 offset-sm-2 col-lg-6 offset-lg-3 col-xl-4 offset-xl-4 text-center">
+            <!-- <div class="logo">
+                <img src="../../../assets/images/logo.jpg" class="img-fluid">
+            </div> -->
+            <form class="rounded bg-white shadow p-5" [formGroup]="LoginForm">
+                <h3 class="text-dark fw-bolder fs-4 mb-2">Sign in Form</h3>
+                <div class="fw-normal text-muted mb-4">
+                    new here? <a href="#" class="text-primary fw-normal text-decoration-none">create an account</a>
+                </div>
+                <div class="form-floating mb-3">
+                    <input type="email" class="form-control" id="floatingInput" placeholder="name@example.com" formControlName="Email" >
+                    <label for="floatingInput">Email address</label>
+                    <span class="text-danger" *ngIf="LoginForm.get('Email').hasError('required') && LoginForm.get('Email').touched">its necessary</span>
+                  </div>
+                  <div class="form-floating">
+                    <input type="password" class="form-control" id="floatingPassword" placeholder="Password" formControlName="Password">
+                    <label for="floatingPassword">Password</label>
+
+                    <span class="text-danger" *ngIf="LoginForm.get('Password').hasError('required') && LoginForm.get('Password').touched">its necessary</span>
+                    <span class="text-danger" *ngIf="LoginForm.get('Password').hasError('minlength') 
+                    && LoginForm.get('Password').touched">should be minimum 5</span>
+                    <span class="text-danger" *ngIf="LoginForm.get('Password').hasError('maxlength') 
+                    && LoginForm.get('Password').touched">should be maximum 10</span>
+                  </div>
+                  <div class="mt-2 text-end">
+                    <a href="#" class="text-primary fw-bold text-decoration-none">forget Password?</a>
+                  </div>
+                  <button (click)="submitData()" class="btn btn-primary w-100 my-4 " [disabled]="!LoginForm.valid">Continue</button>
+                  <div class="text-center text-muted text-uppercase ">
+                    OR
+
+                  </div>
+                    <a href="#" class="btn btn-light login-with w-100 mb-3">
+                        <img src="../../../assets/images/google.png" class="img-fluid me-3">
+                        Continue with google
+                    </a>
+                    <a href="#" class="btn btn-light login-with w-100 mb-3">
+                        <img src="../../../assets/images/facebook-new.png" class="img-fluid me-3">
+                        Continue with google
+                    </a>
+                    <a href="#" class="btn btn-light login-with w-100 mb-3">
+                        <img src="../../../assets/images/linkedin.png" class="img-fluid me-3">
+                        Continue with google
+                    </a>
+                 
+
+                  
+            </form>
+        </div>
+    </div>
+</section>
